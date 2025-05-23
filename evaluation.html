@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 255);
+        }
+
+        .top-bar {
+            width: 100%;
+            height: 60px;
+            background: url('topbar.PNG') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+            position: relative; /* Keeps buttons above the background */
+        }
+
+            .nav-buttons a {
+                text-decoration: none;
+                color: white;
+                background-color: rgba(255, 0, 69, 0.6); /* Slight transparency for better visibility */
+                padding: 10px 15px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .nav-buttons a:hover {
+                    background-color: rgba(0, 212, 255, 0.8);
+                }
+
+    
+
+        /* Content Section */
+        .content {
+            padding: 50px;
+            font-size: 1.2rem;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar with Navigation -->
+    <div class="top-bar">
+        <div class="nav-buttons">
+            <a href="index.html">Homepage</a>
+            <a href="planning.html">Planning</a>
+            <a href="research.html">Research</a>
+            <a href="game-product.html">Game/Product</a>
+            <a href="evaluation.html">Evaluation</a>
+        </div>
+    </div>
+
+    <!-- Hero Image Section -->
+    <div class="hero">
+       
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+         <h2>Evaluation</h2>
+         <p>At the start of the project, my original goal was to create a cozy, story driven world builder. I wanted this to be a relaxing game where players could explore an open world while being able to build and customize the environment. During the research and planning phase I found out that in games like Stardew Valley (Medium. (Sep 28, 2020)) it had a peaceful atmosphere with every interaction being meaning full and impactful and always have a part of the games progression and I wanted to recreate this style of game but in 3D. However, as the weeks went on, I noticed set my target to high which led to not being able to complete this game in the given time frame and found out the games scope was too much out of scope for what was possible to achieve in such little time.   </p>
+         <p>After some thinking I decided on creating a much smaller game and eventually settled on creating a multiplayer prop hunt game. This allowed me to fully explore the possibilities of creating fast paced gameplay while keeping the project challenging and fun to create with systems like local multiplayer and replication being a big part of the games core loop. Using my research on prop hunt games I found out a low poly design is the best way to go about creating a fast-paced game. I used games like Witch It (Barrel Roll Games. (2020). Witch It.)., Run Prop Run (Play Together Studio. (2021). Run Prop Run.) and Peekaboo (Redaster Studio. (2019). Peekaboo.) to help me flesh out the core mechanics of prop hunt games and see how they should be implemented.</p>
+         <p>The biggest success during this project was figuring out how networking works with implementing the ability to keep the server smooth and reliable. Creating this game had some challenges with syncing the players animations and movement together. Networking was the biggest issue I had with big number of players but in the end, I settled on using Unreal Engines (Epic Games. Networking and Multiplayer. [Online]. Unreal Engine Documentation.) built in LAN system to create a small 10 player server. I was able to ensure all players could join the server and move around without any lag or delay, I also was able to have the players interact with the world without any latency or networking issues.  </p>
+         <p>Another major milestone during this project with getting prop transformation working as originally the props did have the ability to transform into props and have it replicate across the whole server. Being that this was one of the core features of prop hunt games like Witch It (Barrel Roll Games. (2020). Witch It.). I spent a lot of time fixing and testing this feature, Eventually I was able to implement this and have it working correctly and still have it look smooth for all players running on the server. I created a system that checks the closest object to the player and then transforms them into that object and makes sure it also transforms on the server, so all players see the prop as the item its disguised as. After a lot of testing this feature ran smoothly for all players helping add depth to my game.  </p>
+         <p>Looking back on my project, one of the main things I could have improved on was adding more audio and visuals to enhance the overall feel of the game and not having it feel empty and boring. Even though the core gameplay loop was in place, the lack of sound design and some dynamic visuals the game felt a flat at times. Adding some ambient sounds, audio cues for player actions and some visual effects would of helped to create a much bigger feel, this is like games like Run! Prop Run! (Play Together Studio. (2021). Run Prop Run.) and Witch It! (Barrel Roll Games. (2020). Witch It.) even though they are both low poly games there is a lot of audio and visuals that helps tie into the feel of the gameplay which I feel my game lacked the most of. </p>
+         <p>A mechanic I wanted to add but unfortunately did not have the time to add was having special abilities for both the hunters and the props to add more strategy and make my game stand out from others. For example the props could have decoys that last for so long to trick the hunters while the hunters could of had a limited use scanning tool to track props for a short duration of time or even given them a speed boost as props have the ability to sprint and the hunters only had walking which caused an unfair advantage for the props being faster than the hunters. Using my research games like Witch It (Barrel Roll Games. (2020). Witch It.) used special abilities to create a fun experience allowing props to place decoys to trick the hunters or even fly away. </p>
+         <p>While playtesting my game, I received a lot of feedback that helped me identify and fix important bugs in my game. One of the major issues was players were able to jump out of the map which made the game unfair as players could infinitely fall and would be impossible to be killed by the hunters meaning players would have to wait for the game to end. After finding out about this bug I instantly went a fixed this issue by fixing all the boundaries in the map making sure there are no spots you can jump out of. I achieved this by adding invisible walls to keep players inside the map, doing this change helped keep the game fair, this fixed allowed me to remove any way to cheat into winning rounds. </p>
+         <p>Another big bug that players found while playtesting is sometimes they was not able to  even become a prop, which completely ruined the theme of creating a prop hunt game, After this bug was brought to my attention I went a looked through all the code that controls being able to become a prop and was able to fix the bug by increasing the detection radius and making sure all props could by selected by being close to it. Thanks to the feedback I received, this made the game way more enjoyable as players can now hide as props and watch as the hunters run around trying to find them. </p>
+         <p>Overall, this project helped me learn a lot about the development of multiplayer games, especially using Unreal Engines build in systems for replication and multiplayer. I learned how to correctly make sure all gameplay elements like movement, interactions and prop transformations were all synchronized correctly across all clients. Through doing repeated playtesting sessions, I quickly improved on my ability to identify and fix bugs massively improving on the quality and overall stability of the game. My research into prop hunt games such as Witch It (Barrel Roll Games. (2020). Witch It.), Run Prop Run (Play Together Studio. (2021). Run Prop Run.) and Peekaboo (Redaster Studio. (2019). Peekaboo.) was super helpful in understanding how they structure their mechanics, maps. </p>
+         <p>However, looking back, I realized I could have used my research more effectively with certain areas of my game for example my lack of audio and visuals could have been a lot better if you compare it to big title prop hunt games. If I had more time during this project I would have spent more time integrating these elements into my own game. Creating a prop hunt game as shown me the importance of applying design choices from existing games to create a better player experience. </p>
+         <p>If I was to redo this project, one of the main things I would focus on better is planning and integrating more features that I discovered during my research. While I easily managed to get the core gameplay working, I still lacked a lot of small features that ties into creating a fun, fast paced and want to keep players engaged, Next time I would take use of Trello Boards to help me structure what mechanics to implement and when to implement it, This makes it easier to keep on track the features and mechanics I would want inside of my project.  </p>
+         <p>I would also spend more time planning playtesting sessions for more feedback to help identify bugs or features I could add into my game, even though all bugs got fixed if i did playtesting earlier on in the project I would of quickly been able to identify the problem with jumping out the map and not being able to transform leaving me with more time to add more features. Finally, I would make more use of Unreal Engines tools, now that I have a bigger understanding of how networking and replication works. With everything that I have learnt a second version of this project would be more refined and have a lot more features creating a bigger feel for the players.</p>
+         <p>In conclusion I believe the project went very successfully, I was able to create a Local Multiplayer Prop Hunt game and understand all code that went into creating a game like this for example Multiplayer and Replication was the biggest part of my game, the project could of looked and played better if I had time to add every mechanic I wanted to add but due to short time frame I had due to switching game ideas, If I did this again I would make sure to utilize my planning and research and stick to my timeframe and create a much better looking and fun game to play.</p>
+    <h2>Reflective Log</h2>
+     <iframe width="2000" height="1057" frameborder="0" scrolling="no" src="https://southstaffsac.sharepoint.com/sites/GamesProductionFinalMajorProjectL3Y12425/_layouts/15/Doc.aspx?sourcedoc={77adb7fb-eaa8-46d7-bdb9-36f157aeddbd}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+        <h2>References</h2>
+        <p>Epic Games. (N/A). Networking and Multiplayer. [Online]. Unreal Engine Documentation. Last Updated: N/A. Available at: https://dev.epicgames.com/documentation/en-us/unreal-engine/networking-and-multiplayer-in-unreal-eng [Accessed 22 May 2025].</p>
+        <p>Medium. (Sep 28, 2020). A Critical Play of Stardew Valley. [Online]. Medium. Last Updated: Sep 28, 2020. Available at: https://medium.com/game-design-fundamentals/a-critical-play-of-stardew-valley-c7ec30ef5070 [Accessed 28 February 2025].</p>
+         <p>Barrel Roll Games. (2020). Witch It. [Online]. Steam. Last Updated: 22 October 2020. Available at: https://store.steampowered.com/app/559650/Witch_It/ [Accessed 6 May 2025].</p>
+        <p>PlayTogether Studio. (2021). Run Prop Run. [Online]. Steam. Last Updated: 23 June 2021. Available at: https://store.steampowered.com/app/1475400/Run_Prop_Run__Puropu_Pursuit/ [Accessed 6 May 2025].</p>
+        <p>Redaster Studio. (2019). Peekaboo. [Online]. Steam. Last Updated: 7 August 2019. Available at: https://store.steampowered.com/app/1048100/Peekaboo/ [Accessed 6 May 2025].</p>
+    </div>
+
+</body>
+</html>
